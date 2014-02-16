@@ -169,6 +169,15 @@ textAngular.directive("textAngular", ['$compile', '$window', '$document', '$root
 				return $document[0].queryCommandState('justifyCenter');
 			}
 		},
+		justifyFull: {
+			display: "<button ng-click='action()' ng-class='displayActiveToolClass(active)'><i class='fa fa-align-justify'></i></button>",
+			action: function() {
+				return this.$parent.wrapSelection("justifyFull", null);
+			},
+			activeState: function() {
+				return $document[0].queryCommandState('justifyFull');
+			}
+		},
 		italics: {
 			display: "<button type='button' ng-click='action()' ng-class='displayActiveToolClass(active)'><i class='fa fa-italic'></i></button>",
 			action: function() {
